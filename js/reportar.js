@@ -1,4 +1,14 @@
 
+class Animal {
+    constructor (raza,barrio,nombre) {
+        this.raza = raza;
+        this.barrio = barrio;
+        this.nombre = nombre ?? "";
+    }
+
+}
+
+
 const listaPerdidos = [];
 
 function reportar (listaPerdidos) {
@@ -13,10 +23,7 @@ function reportar (listaPerdidos) {
         barrio = prompt ("Ingresa el barrio donde se perdio: ");
         nombre = prompt ("Como se llama la mascota: ");
 
-       let reportado = 
-       {raza: raza.toUpperCase,
-        barrio: barrio.toUpperCase,
-        nombre:nombre}
+        let reportado = new Animal (raza.toUpperCase, barrio.toUpperCase, nombre);
 
         listaPerdidos.push(reportado);
         if (prompt ("Quieres reportar uno más? SI/NO") === "SI")
